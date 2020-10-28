@@ -48,8 +48,8 @@ public class Reservation implements Serializable {
     }
 
     // 예약 취소
-    @PostUpdate
-    public void onPostUpdate() {
+    @PreUpdate
+    public void onPreUpdate() {
 
         // 예약 취소
         if(this.stat.equals("CANCELLED")) {

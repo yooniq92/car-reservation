@@ -7,6 +7,7 @@ public class Reserved extends AbstractEvent {
     private String resvDate;
     private String resvTime;
     private String vehiNo;
+    private String stat;
 
     public Long getId() {
         return id;
@@ -36,5 +37,13 @@ public class Reserved extends AbstractEvent {
 
     public void setVehiNo(String vehiNo) {
         this.vehiNo = vehiNo;
+    }
+
+    public String getStat() {
+        return stat;
+    }
+
+    public void setStat(String stat) {
+        this.stat = stat;
     }
 }
