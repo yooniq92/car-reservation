@@ -1,6 +1,6 @@
 package automechanicsmall.external;
 
-public class Receipt {
+public class Repair {
 
     private Long id;
     private String rcptDate;

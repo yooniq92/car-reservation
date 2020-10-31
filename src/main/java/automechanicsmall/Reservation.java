@@ -61,15 +61,15 @@ public class Reservation implements Serializable {
 
             //Following code causes dependency to external APIs
             // it is NOT A GOOD PRACTICE. instead, Event-Policy mapping is recommended.
-            automechanicsmall.external.Receipt receipt = new automechanicsmall.external.Receipt();
+            automechanicsmall.external.Repair repair = new automechanicsmall.external.Repair();
 
             // mappings goes here
             String resvDate = this.getResvDate();
             String resvTime = this.getResvTime();
 
-            // 예약 취소시 Receipt에서 먼저 예약 취소 처리 진행 (SAGA req/res)
-            // external ReceiptService.java에서 Receipt로 http 전송
-            ReservationApplication.applicationContext.getBean(automechanicsmall.external.ReceiptService.class).cancel(resvDate, resvTime);
+            // 예약 취소시 Repair에서 먼저 예약 취소 처리 진행 (SAGA req/res)
+            // external RepairService.java에서 Repair로 http 전송
+            ReservationApplication.applicationContext.getBean(automechanicsmall.external.RepairService.class).cancel(resvDate, resvTime);
         }
     }
 
